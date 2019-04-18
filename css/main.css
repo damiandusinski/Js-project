@@ -55,18 +55,29 @@ html {
 
 .wrapper {
   height: 100vh;
+  width: 100vw;
   background: #1cffb7;
   color: #544e4d;
   text-align: center;
 }
 
-.wrapper img {
+.wrapper .container {
+  position: relative;
+  height: 100%;
+}
+
+.wrapper .container.blur {
+  -webkit-filter: blur(3px);
+          filter: blur(3px);
+}
+
+.wrapper .container img {
   display: block;
   width: 50%;
   margin: 0 auto;
 }
 
-.wrapper .environments {
+.wrapper .container .environments {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -78,5 +89,22 @@ html {
 
 .wrapper .modal {
   display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  padding: 20px 40px;
+  border: 3px solid #544e4d;
+  border-radius: 20px;
+  background: #1cffb7;
+}
+
+.wrapper .modal.activ {
+  display: block;
+}
+
+.wrapper .modal .timer {
+  font-size: 3rem;
 }
 /*# sourceMappingURL=main.css.map */

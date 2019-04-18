@@ -1,23 +1,44 @@
 // overal leayout
 .wrapper {
   height: 100vh;
+  width: 100vw;
   background: $primary-color;
   color: $secondary-color;
   text-align: center;
+  .container {
+    position: relative;
+    height: 100%;
+    &.blur {
+      filter: blur(3px);
+    }
 
-  img {
-    display: block;
-    width: 50%;
-    margin: 0 auto;
+    img {
+      display: block;
+      width: 50%;
+      margin: 0 auto;
+    }
+
+    .environments {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 40px;
+    }
   }
-
-  .environments {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px 40px;
-  }
-
   .modal {
     display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px 40px;
+    border: 3px solid $secondary-color;
+    border-radius: 20px;
+    background: $primary-color;
+    &.activ {
+      display: block;
+    }
+    .timer {
+      font-size: 3rem;
+    }
   }
 }
