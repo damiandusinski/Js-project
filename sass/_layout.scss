@@ -1,1 +1,23 @@
 // overal leayout
+.wrapper {
+  height: 100vh;
+  background: $primary-color;
+  color: $secondary-color;
+  text-align: center;
+
+  img {
+    display: block;
+    width: 50%;
+    margin: 0 auto;
+  }
+
+  .environments {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 40px;
+  }
+
+  .modal {
+    display: none;
+  }
+}
