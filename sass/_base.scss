@@ -10,7 +10,11 @@ html {
 }
 
 //   variables
-
+$primary-color: #1cffb7;
+$secondary-color: #544e4d;
 // mixins
+@mixin easyOut {
+  transition: all 0.5s ease-out 0;
+}
 
 // funcions
