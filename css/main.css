@@ -31,6 +31,15 @@ html {
   font-size: 2rem;
 }
 
+.time:hover {
+  cursor: pointer;
+}
+
+.time.active {
+  background: #fff;
+  color: #544e4d;
+}
+
 .secondary-header {
   font-size: 2rem;
   margin-top: 3rem;
@@ -51,6 +60,15 @@ html {
   border: 2px solid #544e4d;
   border-radius: 50%;
   font-size: 2.2rem;
+}
+
+.environment:hover {
+  cursor: pointer;
+}
+
+.environment.active {
+  background: #fff;
+  color: #544e4d;
 }
 
 .wrapper {
