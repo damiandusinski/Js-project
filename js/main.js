@@ -7,7 +7,7 @@ const btnCancel = document.querySelector(".btn-cancel");
 const pMin = document.querySelector(".min");
 const pSec = document.querySelector(".sec");
 
-let audio;
+let audio = new Audio("../mp3/forest.mp3");
 let timerFlag = false;
 let pause;
 let min;
@@ -25,16 +25,17 @@ const addEvent = nodeList => {
         sec = item.dataset.sec;
         pMin.textContent = min;
         pSec.textContent = sec;
-      } else if (nodeList === environments) {
-        if (item.textContent === "forest") {
-          audio = new Audio("../mp3/forest.mp3");
-        }
-        if (item.textContent === "city") {
-          audio = new Audio("../mp3/city.mp3");
-        } else {
-          audio = new Audio("../mp3/sea.mp3");
-        }
       }
+      // else if (nodeList === environments) {
+      //   if (item.textContent === "forest") {
+      //     audio = new Audio("../mp3/forest.mp3");
+      //   }
+      //   if (item.textContent === "city") {
+      //     audio = new Audio("../mp3/city.mp3");
+      //   } else {
+      //     audio = new Audio("../mp3/sea.mp3");
+      //   }
+      // }
     });
   });
 };
