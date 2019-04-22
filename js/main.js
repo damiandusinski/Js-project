@@ -54,7 +54,7 @@ const timer = () => {
 addEvent(times);
 addEvent(environments);
 
-btnStart.addEventListener("click touchstart", e => {
+btnStart.addEventListener("click touchstart", => {
   pause = setInterval(timer, 1000);
   modal.classList.add("active");
   container.classList.add("blur");
