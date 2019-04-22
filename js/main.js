@@ -6,6 +6,8 @@ const container = document.querySelector(".container");
 const btnCancel = document.querySelector(".btn-cancel");
 const pMin = document.querySelector(".min");
 const pSec = document.querySelector(".sec");
+
+let audio;
 let timerFlag = false;
 let pause;
 let min = 9;
@@ -23,6 +25,15 @@ const addEvent = nodeList => {
         sec = item.dataset.sec;
         pMin.textContent = min;
         pSec.textContent = sec;
+      } else if (nodeList === environments) {
+        if (item.textContent === "forest") {
+          audio = new Audio("../mp3/forest.mp3");
+        }
+        if (item.textContent === "city") {
+          audio = new Audio("../mp3/city.mp3");
+        } else {
+          audio = new Audio("../mp3/sea.mp3");
+        }
       }
     });
   });
@@ -55,10 +66,13 @@ addEvent(times);
 addEvent(environments);
 
 btnStart.addEventListener("click", () => {
-  pause = setInterval(timer, 1000);
-  modal.classList.add("active");
-  container.classList.add("blur");
-  timerFlag = true;
+  if (min && sec && audio) {
+    pause = setInterval(timer, 1000);
+    modal.classList.add("active");
+    container.classList.add("blur");
+    timerFlag = true;
+    audio.play();
+  }
 });
 btnCancel.addEventListener("click", () => {
   modal.classList.remove("active");
@@ -66,14 +80,20 @@ btnCancel.addEventListener("click", () => {
   clearInterval(pause);
   restart(times);
   restart(environments);
+  audio.pause();
+  audio = "";
+  min = "";
+  sec = "";
 });
 
 document.querySelector(".btn-pause").addEventListener("click", () => {
   if (timerFlag === true) {
     clearInterval(pause);
+    audio.pause();
     timerFlag = false;
   } else {
     pause = setInterval(timer, 1000);
     timerFlag = true;
+    audio.play();
   }
 });
