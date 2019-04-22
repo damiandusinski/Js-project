@@ -10,8 +10,8 @@ const pSec = document.querySelector(".sec");
 let audio;
 let timerFlag = false;
 let pause;
-let min = 9;
-let sec = 10;
+let min;
+let sec;
 
 const addEvent = nodeList => {
   nodeList.forEach(item => {
