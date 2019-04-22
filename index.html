@@ -18,9 +18,11 @@
           <img src="img/handdrawn-book.png" alt="book" />
           <h1 class="main-header">How long would you like to read?</h1>
           <div class="times">
-            <div class="time time-1">10 sec(only for developer ;))</div>
-            <div class="time time-2">15 min</div>
-            <div class="time time-3">30 min</div>
+            <div class="time time-1" data-min="00" data-sec="10">
+              10 sec(only for developer ;))
+            </div>
+            <div class="time time-2" data-min="15" data-sec="00">15 min</div>
+            <div class="time time-3" data-min="30" data-sec="00">30 min</div>
           </div>
           <h2 class="secondary-header">Set your environment</h2>
           <div class="environments">
@@ -32,7 +34,11 @@
         </div>
         <div class="modal">
           <div class="timer-container">
-            <div class="timer">00:00</div>
+            <div class="timer">
+              <span class="min"></span>
+              :
+              <span class="sec"></span>
+            </div>
             <button class="btn btn-pause">pause</button>
             <button class="btn btn-cancel">cancel</button>
           </div>

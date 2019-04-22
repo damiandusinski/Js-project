@@ -27,18 +27,25 @@
   .modal {
     display: none;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 20px 40px;
-    border: 3px solid $secondary-color;
-    border-radius: 20px;
-    background: $primary-color;
-    &.activ {
-      display: block;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    .timer-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 20px 40px;
+      border: 3px solid $secondary-color;
+      border-radius: 20px;
+      background: $primary-color;
+      .timer {
+        font-size: 3rem;
+      }
     }
-    .timer {
-      font-size: 3rem;
+    &.active {
+      display: block;
     }
   }
 }
