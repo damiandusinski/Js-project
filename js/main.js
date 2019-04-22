@@ -54,13 +54,13 @@ const timer = () => {
 addEvent(times);
 addEvent(environments);
 
-btnStart.addEventListener("click", e => {
+btnStart.addEventListener("click touchstart", e => {
   pause = setInterval(timer, 1000);
   modal.classList.add("active");
   container.classList.add("blur");
   timerFlag = true;
 });
-btnCancel.addEventListener("click", () => {
+btnCancel.addEventListener("click touchstart", () => {
   modal.classList.remove("active");
   container.classList.remove("blur");
   clearInterval(pause);
